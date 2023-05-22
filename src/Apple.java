@@ -16,8 +16,8 @@ public class Apple {
     public void display(){
         Main.app.fill(232, 60, 26); //red
         Main.app.ellipse(xPos,yPos,80,80);
+        System.out.println("displayed");
     }
-
     public int getxPos(){
         return xPos;
     }
