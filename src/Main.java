@@ -4,6 +4,7 @@ import java.lang.Thread;
 import java.io.*;
 public class Main extends PApplet{
     private int currentXCoord = 700; //left most x on player
+    private int fps = 20;
     private int changeX = 0; //change in players location
     public static Main app;
     private int numApples = 10; //total number of apples;
@@ -25,8 +26,8 @@ public class Main extends PApplet{
     }
 
     public void setup(){
+        frameRate(fps);
         noStroke();
-        background(154, 212, 237);
         drawBackground();
         updatePlayer();
 
@@ -35,14 +36,29 @@ public class Main extends PApplet{
             pomme.add(a);
             pomme.get(i).display();
         }
+
+
     }
 
 
     public void draw(){
+            fall(pomme.get(0));
+            fall(pomme.get(1));
+    }
 
+    public void fall(Apple temp){
+        if(temp.getyPos() < 500) {
+            System.out.println("keypressed");
+            System.out.println(temp.getyPos());
+            drawBackground();
+            temp.display();
+            System.out.println("x: " + temp.getxPos() + " y: " + temp.getyPos());
+            temp.setyPos(temp.getyPos() +5);
+        }
     }
 
     public void updatePlayer(){
+        System.out.println("playerupdated");
         fill(80, 150, 75); //grassgreen
         rect(currentXCoord, 450,60, 120);// clearing out the background
 
@@ -52,6 +68,8 @@ public class Main extends PApplet{
     }
 
     public void drawBackground(){
+        background(154, 212, 237);
+        System.out.println("background");
         noStroke();
         fill(80, 150, 75); //grassgreen
         rect(0,400,2000,1000);//grass
@@ -62,21 +80,6 @@ public class Main extends PApplet{
     }
 
     public void keyPressed() {
-        System.out.println("keypresed");
-        System.out.println(pomme.get(0).getyPos());
-
-        Apple temp = pomme.get(0);
-
-        while(temp.getyPos() < 580) {
-            temp.display();
-            System.out.println("x: " + temp.getxPos() + " y: " + temp.getyPos());
-            temp.setyPos(temp.getyPos() +1);
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        }
 
         if(key == 81){ //if the key is q
             gameRunning = !gameRunning;
