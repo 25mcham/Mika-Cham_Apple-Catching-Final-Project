@@ -20,28 +20,16 @@ public class Apple {
     public int getxPos(){
         return xPos;
     }
-
     public int getyPos(){
         return yPos;
     }
-
     public void setyPos(int sety){
         yPos = sety;
     }
-
     public void setxPos(int setx){
         xPos = setx;
     }
-
-    public int getSpeed(){
-        return speed;
-    }
-
-    public void setCaught(boolean a){
-        caught = a;
-    }
-
-    public boolean getCaught(){
-        return caught;
-    }
+    public int getSpeed(){ return speed; }
+    public void setCaught(boolean a){ caught = a; }
+    public boolean getCaught(){ return caught; }
 }

@@ -7,15 +7,15 @@ import java.lang.Thread;
 import java.io.*;
 public class Main extends PApplet{
     private int x1Play = 700, y1Play = 450; //topleft coord on player
-    private int pWidth = 60, pHite = 120;
-    private int numCaught = 0; // number of apples caught
-    private int fps = 20;
     private static int changeX = 0; //change in players location
+    private int pWidth = 60, pHite = 120; //width and height of player
+    private int numCaught = 0; // number of apples caught
+    private int numApples = 10; //total number of apples;
+    private int fps = 30;//frames per second
     public static Main app;
     private static int pSpeed = 50;
-    private int numApples = 10; //total number of apples;
     private ArrayList<Apple> pomme = new ArrayList<Apple>(); //all apples
-    private ArrayList<Apple> fallen = new ArrayList<Apple>(); // apples that have fallen to the ground
+    private ArrayList<Apple> fallen = new ArrayList<Apple>(); //apples that have fallen to the ground
     private ArrayList<Apple> nFallen = new ArrayList<Apple>(); //apples that have not fallen to the ground.. yet
     public Main(){
         super();
@@ -38,13 +38,10 @@ public class Main extends PApplet{
                 */
                 if (keyCode == KeyEvent.VK_LEFT) {
                     changeX = 0-pSpeed;
-                }
-                else if (keyCode == KeyEvent.VK_RIGHT) {
-                    System.out.println("Right Arrrow-Key is pressed!");
+                } else if (keyCode == KeyEvent.VK_RIGHT) {
                     changeX = pSpeed;
                 }
             }
-
             public void keyReleased(KeyEvent e){
                 changeX = 0;
             }
@@ -54,19 +51,13 @@ public class Main extends PApplet{
     public void settings(){
         size(1400,600);
     }
-
     public void setup(){
         frameRate(fps);
         noStroke();
         drawBackground();
         updatePlayer();
 
-        Apple b = new Apple((int)(Math.random()*20+20),false,(int)(1400/ numApples*(4+0.5)),(int)(Math.random()*180+45));
-
-        System.out.println(intersect(80,b.getxPos(),b.getyPos(),x1Play,y1Play,x1Play + pWidth, y1Play + pHite));//player intersects with this apple
-
-
-            for(int i = 0; i < numApples; i++){// instantiate arraylist
+        for(int i = 0; i < numApples; i++){// instantiate arraylist
             Apple a = new Apple((int)(Math.random()*20+20),false,(int)(1400/ numApples*(i+0.5)),(int)(Math.random()*180+45));
             pomme.add(a);
             pomme.get(i).display();
@@ -113,11 +104,9 @@ public class Main extends PApplet{
     public boolean fall(Apple temp){
         frameRate(temp.getSpeed());
         if(temp.getyPos() < 500) {
-            //System.out.println(temp.getyPos());
-            //drawBackground();
             temp.display();
             //System.out.println("x: " + temp.getxPos() + " y: " + temp.getyPos());
-            temp.setyPos(temp.getyPos() + 15);
+            temp.setyPos(temp.getyPos() + temp.getSpeed());
             return false;
         }
         fallen.add(temp);
@@ -127,10 +116,8 @@ public class Main extends PApplet{
 
     public void updatePlayer(){
         drawBackground();
-        //System.out.println("playerupdated");
         fill(80, 150, 75); //grassgreen
         rect(x1Play, y1Play, pWidth, pHite);// clearing out the background
-
         x1Play += changeX;
         fill(255,255,255);
         rect(x1Play, y1Play, pWidth, pHite);// draw character
