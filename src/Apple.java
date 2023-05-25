@@ -1,14 +1,12 @@
 public class Apple {
     private int speed;
     private boolean caught;
-    private boolean show;
     private int xPos;//center of apple
     private int yPos;
 
-    public Apple(int speed, boolean caught, boolean show, int xPos, int yPos){
+    public Apple(int speed, boolean caught, int xPos, int yPos){
         this.speed = speed;
         this. caught = caught;
-        this.show = show;
         this.xPos = xPos;
         this.yPos = yPos;
     }

@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6934818-79be-4fac-9ace-7f98058bf171" name="Changes" comment="Finished apple display, made apples fall at random speeds, boolean caught">
-      <change afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+    <list default="true" id="a6934818-79be-4fac-9ace-7f98058bf171" name="Changes" comment="got apples to stop displaying when they intersect with the player, need to fix intersect method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Apple.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
@@ -94,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684987540682</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="got apples to stop displaying when they intersect with the player, need to fix intersect method">
+      <created>1684990577062</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1684990577062</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -104,9 +110,10 @@
     <MESSAGE value="Display apple falling" />
     <MESSAGE value="Apple falling 2/10!!!" />
     <MESSAGE value="Finished apple display, made apples fall at random speeds, boolean caught" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished apple display, made apples fall at random speeds, boolean caught" />
+    <MESSAGE value="got apples to stop displaying when they intersect with the player, need to fix intersect method" />
+    <option name="LAST_COMMIT_MESSAGE" value="got apples to stop displaying when they intersect with the player, need to fix intersect method" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Mika_Cham_Apple_Catching_Final_Project$Main.ic" NAME="Main Coverage Results" MODIFIED="1684989825643" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Mika_Cham_Apple_Catching_Final_Project$Main.ic" NAME="Main Coverage Results" MODIFIED="1684990824896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

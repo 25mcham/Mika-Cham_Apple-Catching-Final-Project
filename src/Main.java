@@ -31,13 +31,13 @@ public class Main extends PApplet{
         drawBackground();
         updatePlayer();
 
-        Apple b = new Apple((int)(Math.random()*20+20),false,true,(int)(1400/ numApples*(4+0.5)),(int)(Math.random()*180+45));
+        Apple b = new Apple((int)(Math.random()*20+20),false,(int)(1400/ numApples*(4+0.5)),(int)(Math.random()*180+45));
 
         System.out.println(intersect(80,b.getxPos(),b.getyPos(),x1Play,y1Play,x1Play + pWidth, y1Play + pHite));//player intersects with this apple
 
 
             for(int i = 0; i < numApples; i++){// instantiate arraylist
-            Apple a = new Apple((int)(Math.random()*20+20),false,true,(int)(1400/ numApples*(i+0.5)),(int)(Math.random()*180+45));
+            Apple a = new Apple((int)(Math.random()*20+20),false,(int)(1400/ numApples*(i+0.5)),(int)(Math.random()*180+45));
             pomme.add(a);
             pomme.get(i).display();
             nFallen.add(a);
@@ -74,6 +74,8 @@ public class Main extends PApplet{
                     numCaught++;
                     System.out.println("Apples caught:" + numCaught);
                     i--;
+                    //Apple temp = new Apple(a.getSpeed(),false,a.getxPos(),a.getyPos());
+                    //fallen.add(temp); //temporary DELETE LATER makes apples stay when they were " caught"
                 }
             }
     }
@@ -145,7 +147,7 @@ public class Main extends PApplet{
         int xDist = Math.abs(xNear - xCirc); // x and y distance to center of circle from closest rect point
         int yDist = Math.abs(yNear - yCirc);
 
-        double distCenter = Math.sqrt(Math.pow(yDist,2) + Math.pow(xDist,2)); //distance from center of circle
+        double distCenter = Math.sqrt(Math.pow(yDist,2) + Math.pow(xDist,2))*2; //distance from center of circle
         return (distCenter <= radius);
     }
 }
