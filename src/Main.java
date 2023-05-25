@@ -1,13 +1,18 @@
 import processing.core.PApplet;
 import java.util.ArrayList;
+import javax.swing.JFrame; //for key detection
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.lang.Thread;
 import java.io.*;
 public class Main extends PApplet{
     private int x1Play = 700, y1Play = 450; //topleft coord on player
     private int pWidth = 60, pHite = 120;
     private int numCaught = 0; // number of apples caught
-    private int fps = 20, changeX = 0; //change in players location
+    private int fps = 20;
+    private static int changeX = 0; //change in players location
     public static Main app;
+    private static int pSpeed = 50;
     private int numApples = 10; //total number of apples;
     private ArrayList<Apple> pomme = new ArrayList<Apple>(); //all apples
     private ArrayList<Apple> fallen = new ArrayList<Apple>(); // apples that have fallen to the ground
@@ -19,6 +24,31 @@ public class Main extends PApplet{
 
     public static void main(String[] args){
         PApplet.main("Main");
+        JFrame myJFrame = new JFrame(); //line 30,31 key input code
+        myJFrame.setVisible(true);
+        myJFrame.addKeyListener(new KeyAdapter() {
+            public void keyPressed(KeyEvent e) {
+                int keyCode = e.getKeyCode();
+                /*if (keyCode == KeyEvent.VK_UP) {
+                    System.out.println("Up Arrrow-Key is pressed!");
+                }
+                else if (keyCode == KeyEvent.VK_DOWN) {
+                    System.out.println("Down Arrrow-Key is pressed!");
+                }
+                */
+                if (keyCode == KeyEvent.VK_LEFT) {
+                    changeX = 0-pSpeed;
+                }
+                else if (keyCode == KeyEvent.VK_RIGHT) {
+                    System.out.println("Right Arrrow-Key is pressed!");
+                    changeX = pSpeed;
+                }
+            }
+
+            public void keyReleased(KeyEvent e){
+                changeX = 0;
+            }
+        });
     }
 
     public void settings(){
@@ -84,7 +114,7 @@ public class Main extends PApplet{
         frameRate(temp.getSpeed());
         if(temp.getyPos() < 500) {
             //System.out.println(temp.getyPos());
-            drawBackground();
+            //drawBackground();
             temp.display();
             //System.out.println("x: " + temp.getxPos() + " y: " + temp.getyPos());
             temp.setyPos(temp.getyPos() + 15);
@@ -96,6 +126,7 @@ public class Main extends PApplet{
     }
 
     public void updatePlayer(){
+        drawBackground();
         //System.out.println("playerupdated");
         fill(80, 150, 75); //grassgreen
         rect(x1Play, y1Play, pWidth, pHite);// clearing out the background
@@ -120,24 +151,6 @@ public class Main extends PApplet{
         for(Apple a: nFallen){
             a.display();
         }
-    }
-
-    public void keyPressed() {
-
-        if(key == 81){ //if the key is q
-            //gameRunning = !gameRunning;
-        }
-
-        if(key == 37){// if the key pressed is the left arrow
-            changeX = -10;
-        } else if(key == 38){ //right arrow is pressed
-            changeX = 10;
-        }
-        //updatePlayer();
-    }
-
-    public void keyReleased(){
-        changeX = 0;
     }
 
     public boolean intersect(int radius, int xCirc, int yCirc, int xRect1, int yRect1, int xRect2, int yRect2){
