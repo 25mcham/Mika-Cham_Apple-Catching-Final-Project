@@ -14,9 +14,10 @@ public class Apple {
     }
 
     public void display(){
-        Main.app.fill(232, 60, 26); //red
-        Main.app.ellipse(xPos,yPos,80,80);
-        System.out.println("displayed");
+        if(!caught){
+            Main.app.fill(232, 60, 26); //red
+            Main.app.ellipse(xPos,yPos,80,80);
+        }
     }
     public int getxPos(){
         return xPos;
@@ -32,5 +33,17 @@ public class Apple {
 
     public void setxPos(int setx){
         xPos = setx;
+    }
+
+    public int getSpeed(){
+        return speed;
+    }
+
+    public void setCaught(boolean a){
+        caught = a;
+    }
+
+    public boolean getCaught(){
+        return caught;
     }
 }

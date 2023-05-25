@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6934818-79be-4fac-9ace-7f98058bf171" name="Changes" comment="Display apple falling">
+    <list default="true" id="a6934818-79be-4fac-9ace-7f98058bf171" name="Changes" comment="Apple falling 2/10!!!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Apple.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684792933155</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Apple falling 2/10!!!">
+      <created>1684881478367</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1684881478368</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -86,9 +94,10 @@
     <MESSAGE value="I worked on the arrowkey movement, and created the apple class, completed the temporary background." />
     <MESSAGE value="I displayed the player and apples, instantiated the apple array, and worked on implementing the apple falling feature" />
     <MESSAGE value="Display apple falling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Display apple falling" />
+    <MESSAGE value="Apple falling 2/10!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Apple falling 2/10!!!" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Mika_Cham_Apple_Catching_Final_Project$Main.ic" NAME="Main Coverage Results" MODIFIED="1684875871170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Mika_Cham_Apple_Catching_Final_Project$Main.ic" NAME="Main Coverage Results" MODIFIED="1684987345989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

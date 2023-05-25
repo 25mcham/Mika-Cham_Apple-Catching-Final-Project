@@ -8,10 +8,11 @@ public class Main extends PApplet{
     private int changeX = 0; //change in players location
     public static Main app;
     private int numApples = 10; //total number of apples;
-    private boolean gameRunning = false;
-    //private boolean moving = false; //moving is true when the key is pressed but not released
 
-    private ArrayList<Apple> pomme = new ArrayList<Apple>();
+    private ArrayList<Apple> pomme = new ArrayList<Apple>(); //all apples
+
+    private ArrayList<Apple> fallen = new ArrayList<Apple>(); // apples that have fallen to the ground
+    private ArrayList<Apple> nFallen = new ArrayList<Apple>(); //apples that have not fallen to the ground.. yet
     public Main(){
         super();
         app = this;
@@ -32,29 +33,50 @@ public class Main extends PApplet{
         updatePlayer();
 
         for(int i = 0; i < numApples; i++){// instantiate arraylist
-            Apple a = new Apple(10,false,true,(int)(1400/ numApples*(i+0.5)),(int)(Math.random()*180+45));
+            Apple a = new Apple((int)(Math.random()*20+20),false,true,(int)(1400/ numApples*(i+0.5)),(int)(Math.random()*180+45));
             pomme.add(a);
             pomme.get(i).display();
+            nFallen.add(a);
         }
-
-
     }
-
 
     public void draw(){
-            fall(pomme.get(0));
-            fall(pomme.get(1));
+            if(fall(pomme.get(0))){
+                if(fall(pomme.get(2))){
+                    if(fall(pomme.get(8))){
+                        if(fall(pomme.get(6))){
+                            if(fall(pomme.get(4))){
+                                if(fall(pomme.get(5))){
+                                    if(fall(pomme.get(3))){
+                                        if(fall(pomme.get(7))){
+                                            if(fall(pomme.get(1))){
+                                                if(fall(pomme.get(9))){
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
     }
 
-    public void fall(Apple temp){
+    public boolean fall(Apple temp){
+        frameRate(temp.getSpeed());
         if(temp.getyPos() < 500) {
-            System.out.println("keypressed");
-            System.out.println(temp.getyPos());
+            //System.out.println(temp.getyPos());
             drawBackground();
             temp.display();
-            System.out.println("x: " + temp.getxPos() + " y: " + temp.getyPos());
-            temp.setyPos(temp.getyPos() +5);
+            //System.out.println("x: " + temp.getxPos() + " y: " + temp.getyPos());
+            temp.setyPos(temp.getyPos() + 15);
+            return false;
         }
+        fallen.add(temp);
+        nFallen.remove(temp);
+        return true;
     }
 
     public void updatePlayer(){
@@ -69,7 +91,6 @@ public class Main extends PApplet{
 
     public void drawBackground(){
         background(154, 212, 237);
-        System.out.println("background");
         noStroke();
         fill(80, 150, 75); //grassgreen
         rect(0,400,2000,1000);//grass
@@ -77,12 +98,18 @@ public class Main extends PApplet{
         rect(620, 200,110,300); //tree trunk
         fill(37, 89, 39);//leafgreen
         ellipse(700,50,1500,500);// tree leaves
+        for(Apple a: fallen){
+            a.display();
+        }
+        for(Apple a: nFallen){
+            a.display();
+        }
     }
 
     public void keyPressed() {
 
         if(key == 81){ //if the key is q
-            gameRunning = !gameRunning;
+            //gameRunning = !gameRunning;
         }
         /*System.out.println("keypressed");
 
