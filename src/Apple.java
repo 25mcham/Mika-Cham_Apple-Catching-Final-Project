@@ -30,6 +30,7 @@ public class Apple {
         xPos = setx;
     }
     public int getSpeed(){ return speed; }
+    public void setSpeed(int s){ speed = s; }
     public void setCaught(boolean a){ caught = a; }
     public boolean getCaught(){ return caught; }
 }

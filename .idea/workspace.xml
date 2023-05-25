@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6934818-79be-4fac-9ace-7f98058bf171" name="Changes" comment="player can move left and right">
+    <list default="true" id="a6934818-79be-4fac-9ace-7f98058bf171" name="Changes" comment="tidied code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Apple.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
@@ -114,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684992662130</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="tidied code">
+      <created>1684993353652</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684993353652</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -127,9 +134,10 @@
     <MESSAGE value="got apples to stop displaying when they intersect with the player, need to fix intersect method" />
     <MESSAGE value="fixed intersect method, apples disappear when they hit the player" />
     <MESSAGE value="player can move left and right" />
-    <option name="LAST_COMMIT_MESSAGE" value="player can move left and right" />
+    <MESSAGE value="tidied code" />
+    <option name="LAST_COMMIT_MESSAGE" value="tidied code" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Mika_Cham_Apple_Catching_Final_Project$Main.ic" NAME="Main Coverage Results" MODIFIED="1684993294053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Mika_Cham_Apple_Catching_Final_Project$Main.ic" NAME="Main Coverage Results" MODIFIED="1685036596261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
