@@ -2,7 +2,7 @@ public class Apple {
     private int speed;
     private boolean caught;
     private boolean show;
-    private int xPos;
+    private int xPos;//center of apple
     private int yPos;
 
     public Apple(int speed, boolean caught, boolean show, int xPos, int yPos){

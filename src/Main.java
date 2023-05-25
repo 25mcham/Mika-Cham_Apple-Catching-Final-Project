@@ -3,14 +3,13 @@ import java.util.ArrayList;
 import java.lang.Thread;
 import java.io.*;
 public class Main extends PApplet{
-    private int currentXCoord = 700; //left most x on player
-    private int fps = 20;
-    private int changeX = 0; //change in players location
+    private int x1Play = 700, y1Play = 450; //topleft coord on player
+    private int pWidth = 60, pHite = 120;
+    private int numCaught = 0; // number of apples caught
+    private int fps = 20, changeX = 0; //change in players location
     public static Main app;
     private int numApples = 10; //total number of apples;
-
     private ArrayList<Apple> pomme = new ArrayList<Apple>(); //all apples
-
     private ArrayList<Apple> fallen = new ArrayList<Apple>(); // apples that have fallen to the ground
     private ArrayList<Apple> nFallen = new ArrayList<Apple>(); //apples that have not fallen to the ground.. yet
     public Main(){
@@ -32,7 +31,12 @@ public class Main extends PApplet{
         drawBackground();
         updatePlayer();
 
-        for(int i = 0; i < numApples; i++){// instantiate arraylist
+        Apple b = new Apple((int)(Math.random()*20+20),false,true,(int)(1400/ numApples*(4+0.5)),(int)(Math.random()*180+45));
+
+        System.out.println(intersect(80,b.getxPos(),b.getyPos(),x1Play,y1Play,x1Play + pWidth, y1Play + pHite));//player intersects with this apple
+
+
+            for(int i = 0; i < numApples; i++){// instantiate arraylist
             Apple a = new Apple((int)(Math.random()*20+20),false,true,(int)(1400/ numApples*(i+0.5)),(int)(Math.random()*180+45));
             pomme.add(a);
             pomme.get(i).display();
@@ -61,7 +65,17 @@ public class Main extends PApplet{
                     }
                 }
             }
-
+            updatePlayer();
+            for(int i = 0; i < nFallen.size(); i++){
+                Apple a = nFallen.get(i);
+                if(intersect(80,a.getxPos(),a.getyPos(),x1Play,y1Play,x1Play + pWidth, y1Play + pHite)){ //player intersects with this apple
+                    nFallen.remove(a);
+                    a.setCaught(true);
+                    numCaught++;
+                    System.out.println("Apples caught:" + numCaught);
+                    i--;
+                }
+            }
     }
 
     public boolean fall(Apple temp){
@@ -80,13 +94,13 @@ public class Main extends PApplet{
     }
 
     public void updatePlayer(){
-        System.out.println("playerupdated");
+        //System.out.println("playerupdated");
         fill(80, 150, 75); //grassgreen
-        rect(currentXCoord, 450,60, 120);// clearing out the background
+        rect(x1Play, y1Play, pWidth, pHite);// clearing out the background
 
-        currentXCoord += changeX;
+        x1Play += changeX;
         fill(255,255,255);
-        rect(currentXCoord, 450,60, 120);// draw character
+        rect(x1Play, y1Play, pWidth, pHite);// draw character
     }
 
     public void drawBackground(){
@@ -111,13 +125,6 @@ public class Main extends PApplet{
         if(key == 81){ //if the key is q
             //gameRunning = !gameRunning;
         }
-        /*System.out.println("keypressed");
-
-
-        */
-
-        //moving = true;
-        //while(moving)
 
         if(key == 37){// if the key pressed is the left arrow
             changeX = -10;
@@ -131,5 +138,14 @@ public class Main extends PApplet{
         changeX = 0;
     }
 
-    public void fall(){}
+    public boolean intersect(int radius, int xCirc, int yCirc, int xRect1, int yRect1, int xRect2, int yRect2){
+        int xNear = Math.max(xRect1, Math.min(xCirc, xRect2)); //nearest point on rect to circle's center, normally corner
+        int yNear = Math.max(yRect1, Math.min(yCirc, yRect2));
+
+        int xDist = Math.abs(xNear - xCirc); // x and y distance to center of circle from closest rect point
+        int yDist = Math.abs(yNear - yCirc);
+
+        double distCenter = Math.sqrt(Math.pow(yDist,2) + Math.pow(xDist,2)); //distance from center of circle
+        return (distCenter <= radius);
+    }
 }
