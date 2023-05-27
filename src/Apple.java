@@ -13,7 +13,6 @@ public class Apple {
 
     public void display(){
         if(!caught){
-            Main.app.fill(232, 60, 26); //red
             Main.app.ellipse(xPos,yPos,80,80);
         }
     }

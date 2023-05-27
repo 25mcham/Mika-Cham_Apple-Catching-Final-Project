@@ -105,8 +105,6 @@ public class Main extends PApplet {
                 numCaught++;
                 displayAppleCount();
                 i--;
-                //Apple temp = new Apple(a.getSpeed(),false,a.getxPos(),a.getyPos());
-                //fallen.add(temp); //temporary DELETE LATER makes apples stay when they were " caught"
             }
         }
     }
@@ -131,6 +129,14 @@ public class Main extends PApplet {
         x1Play += changeX;
         fill(255, 255, 255);
         rect(x1Play, y1Play, pWidth, pHite);// draw character
+        fill(0,0,0);
+        stroke(0);
+        strokeWeight(5);
+        line(x1Play+20,y1Play+20, x1Play+20, y1Play+30); //left eye
+        line(x1Play+40,y1Play+20, x1Play+40, y1Play+30); //right eye
+        strokeWeight(3);
+        line(x1Play+23,y1Play+38, x1Play+37, y1Play+38); //mouth
+        noStroke();
     }
 
     public void drawBackground() {
@@ -143,9 +149,11 @@ public class Main extends PApplet {
         fill(37, 89, 39);//leafgreen
         ellipse(700, 50, 1500, 500);// tree leaves
         for (Apple a : fallen) {
+            Main.app.fill(74,70, 0,10); //brown
             a.display();
         }
         for (Apple a : nFallen) {
+            Main.app.fill(232, 60, 26); //red
             a.display();
         }
         displayAppleCount();
@@ -164,21 +172,22 @@ public class Main extends PApplet {
     }
 
     public void displayAppleCount() {
-        fill(0);
+        fill(255);
         textSize(40);
-        text("Apples caught: " + numCaught + " / " + numApples, 800, 100);
+        text("Apples caught: " + numCaught + " / " + numApples, 850, 100);
     }
 
     public void displayInstructions() {
         textSize(20);
-        fill(0);
+        fill(255);
         text("Catch the apples! ", 30, 60);
         text("Move using the left and right arrow keys ", 30, 80);
         text("Press the space bar to start :) ", 30, 100);
         if(fallen.size() == numApples){
             text("Press the 'r' restart ", 30, 120);
         } else if(numCaught == numApples){
-            text("Press the 'r' restart, or press 'n' to advance to the next level ", 30, 120);
+            text("Congrats!!", 30, 120);
+            text("Press the 'r' restart, or press 'n' to advance to the next level ", 30, 140);
         }
     }
 

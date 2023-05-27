@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6934818-79be-4fac-9ace-7f98058bf171" name="Changes" comment="tidied code">
+    <list default="true" id="a6934818-79be-4fac-9ace-7f98058bf171" name="Changes" comment="made a level 2 and restart button">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Apple.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
@@ -121,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684993353652</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="made a level 2 and restart button">
+      <created>1685036690190</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1685036690190</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -135,9 +142,10 @@
     <MESSAGE value="fixed intersect method, apples disappear when they hit the player" />
     <MESSAGE value="player can move left and right" />
     <MESSAGE value="tidied code" />
-    <option name="LAST_COMMIT_MESSAGE" value="tidied code" />
+    <MESSAGE value="made a level 2 and restart button" />
+    <option name="LAST_COMMIT_MESSAGE" value="made a level 2 and restart button" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Mika_Cham_Apple_Catching_Final_Project$Main.ic" NAME="Main Coverage Results" MODIFIED="1685036596261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Mika_Cham_Apple_Catching_Final_Project$Main.ic" NAME="Main Coverage Results" MODIFIED="1685145169871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
